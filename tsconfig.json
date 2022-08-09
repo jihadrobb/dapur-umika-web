@@ -15,6 +15,14 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "paths": {
+    "@/apis/*": ["apis/*"],
+    "@/assets/*": ["assets/*"],
+    "@/components/*": ["components/*"],
+    "@/utils/*": ["utils/*"],
+    "@/public/*": ["public/*"],
+    "@/store/*": ["store/*"],
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
   "exclude": ["node_modules"]
 }
