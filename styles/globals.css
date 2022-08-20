@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Bobby Jones";
+  src: url("../public/fonts/Bobby\ Jones/Bobby\ Jones\ Soft.otf");
+}
+
+@font-face {
+  font-family: "Boheme Floral";
+  src: url("../public/fonts/Boheme\ Floral/Boheme\ Floral.ttf");
+}
+
+@font-face {
+  font-family: "Copperplate";
+  src: url("../public/fonts/Copperplate/copperplatemodernbold.ttf");
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("../public/fonts/Dancing\ Script/DancingScript-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "El Messiri";
+  src: url("../public/fonts/El\ Messiri/elmessiri-bold.otf");
+}
+
+@font-face {
+  font-family: "Flor";
+  src: url("../public/fonts/Flor/FlorPersonalUseRegular-rgpoy.ttf");
+}
+
+@font-face {
+  font-family: "Garamond";
+  src: url("../public/fonts/Garamond/GaramondRetrospectiveSSiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Mollenia";
+  src: url("../public/fonts/Mollenia/Mollenia.otf");
+}
+
+@font-face {
+  font-family: "Tangerine";
+  src: url("../public/fonts/Tangerine/Tangerine-Regular.ttf");
+}
