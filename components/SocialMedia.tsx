@@ -8,13 +8,13 @@ interface SocialMediaProps {
   onClick?: () => void;
 }
 
-export default ({
+function SocialMedia({
   type,
   imgAlt,
   name,
   fontColor,
   onClick,
-}: SocialMediaProps) => {
+}: SocialMediaProps) {
   const getImgSrc = () => {
     switch (type) {
       case "fb":
@@ -51,4 +51,6 @@ export default ({
       </div>
     </>
   );
-};
+}
+
+export default SocialMedia;
