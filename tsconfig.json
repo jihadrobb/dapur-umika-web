@@ -19,6 +19,7 @@
       "@/apis/*": ["apis/*"],
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
+      "@/configs/*": ["configs/*"],
       "@/utils/*": ["utils/*"],
       "@/public/*": ["public/*"],
       "@/store/*": ["store/*"],
