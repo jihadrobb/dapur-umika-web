@@ -1,0 +1,9 @@
+{
+  "locales": ["id", "en"],
+  "defaultLocale": "id",
+  "pages": {
+    "/": ["home"],
+    "/shop": ["shop"],
+    "/testimonies": ["testimonies"]
+  }
+}
