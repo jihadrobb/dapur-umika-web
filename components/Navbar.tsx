@@ -75,10 +75,14 @@ function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <div className="flex md:hidden sticky top-0 bg-soft-pink h-[8vh] flex z-[999] justify-center items-center px-1">
-        <img src={logoUrl} alt="logo" className="max-h-[7vh] w-[7vh]" />
-        <p className="flex-1 font-BobbyJones text-4xl text-soft-brown text-center">
-          DAPUR UMIKA
-        </p>
+        <Link to="motto" spy smooth isDynamic offset={-60}>
+          <img src={logoUrl} alt="logo" className="max-h-[7vh] w-[7vh]" />
+        </Link>
+        <Link to="motto" spy smooth isDynamic offset={-60} className="flex-1">
+          <p className="font-BobbyJones text-4xl text-soft-brown text-center">
+            DAPUR UMIKA
+          </p>
+        </Link>
         <div
           className="cursor-pointer w-[7vh] flex justify-center text-xl text-soft-brown"
           onClick={() => setOpenMenu((prev) => !prev)}
