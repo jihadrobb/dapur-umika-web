@@ -141,7 +141,7 @@ function Home({ pricelists }: HomeProps) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const pricelists = await pricelistApis.getAll();
 
   return { props: { pricelists } };
