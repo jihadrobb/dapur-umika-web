@@ -1,13 +1,13 @@
 import React from "react";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-export-i18n";
 import LoadingPage from "@/components/LoadingPage";
 
 function Shop() {
-  const { t } = useTranslation("shop");
+  const { t } = useTranslation();
 
   return (
     <>
-      <LoadingPage text="Under Construction" />
+      <LoadingPage text={t("shop.under-construction")} />
     </>
   );
 }
