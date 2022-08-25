@@ -141,10 +141,10 @@ function Home({ pricelists }: HomeProps) {
   );
 }
 
-export async function getServerSideProps() {
+Home.getInitialProps = async () => {
   const pricelists = await pricelistApis.getAll();
 
-  return { props: { pricelists } };
-}
+  return { pricelists };
+};
 
 export default Home;
