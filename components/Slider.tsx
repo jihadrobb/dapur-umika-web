@@ -1,5 +1,8 @@
+import { IImage } from "interfaces/image";
 import React, { useState } from "react";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
+import ClickAwayListener from "react-click-away-listener";
 
 interface SliderProps {
   data: Slide[];
@@ -8,11 +11,12 @@ interface SliderProps {
 interface Slide {
   id: string;
   name: string;
-  imgUrl: string;
+  image: IImage;
 }
 
 function Slider({ data }: SliderProps) {
-  const [indexActive, setIndexActive] = useState(0);
+  const [indexActive, setIndexActive] = useState<number>(0);
+  const [showModal, setShowModal] = useState<boolean>(true);
 
   const onClickLeft = () => {
     if (indexActive === 0) {
@@ -37,10 +41,13 @@ function Slider({ data }: SliderProps) {
           onClick={onClickLeft}
           className="fill-soft-brown mx-1 md:mx-3 cursor-pointer text-md md:text-6xl"
         />
-        <img
-          src={data[indexActive].imgUrl}
-          className="max-w-[75%] h-[60%] border-black border-[1px] rounded-xl"
-        />
+        <ClickAwayListener onClickAway={() => setShowModal(false)}>
+          <img
+            src={data[indexActive].image.imgUrl}
+            className="max-w-[65%] h-[60%] border-black border-[1px] rounded-xl cursor-pointer"
+            onClick={() => setShowModal((prev) => !prev)}
+          />
+        </ClickAwayListener>
         <FaChevronCircleRight
           onClick={onClickRight}
           className="fill-soft-brown mx-1 md:mx-3 cursor-pointer text-md md:text-6xl"
@@ -49,6 +56,22 @@ function Slider({ data }: SliderProps) {
       <p className="text-center font-Mollenia text-xl md:text-3xl text-soft-brown font-bold mt-3">
         {data[indexActive].name}
       </p>
+      <AnimatePresence>
+        {showModal ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0 }}
+            className="fixed top-0 left-0 opacity-25 h-screen w-screen flex flex-row items-center justify-center"
+          >
+            <img
+              src={data[indexActive].image.imgUrl}
+              className="w-[95%] md:w-auto md:h-[80%] rounded-xl cursor-pointer"
+            />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </>
   );
 }
