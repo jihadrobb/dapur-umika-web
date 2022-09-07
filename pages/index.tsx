@@ -15,10 +15,10 @@ interface HomeProps {
 
 function Home({ pricelists }: HomeProps) {
   const router = useRouter();
-  const [imageMix, setImageMix] = useState(
-    "https://res.cloudinary.com/dapurumika/image/upload/v1661336226/Pricelist/mix_arn37p.png"
+  const [imageMix, setImageMix] = useState<string>(
+    "https://res.cloudinary.com/dapurumika/image/upload/v1662543768/mix_gbdk0b.png"
   );
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {}, []);
 
@@ -141,10 +141,10 @@ function Home({ pricelists }: HomeProps) {
   );
 }
 
-Home.getInitialProps = async () => {
+export const getServerSideProps = async () => {
   const pricelists = await pricelistApis.getAll();
 
-  return { pricelists };
+  return { props: { pricelists } };
 };
 
 export default Home;

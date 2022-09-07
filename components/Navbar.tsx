@@ -5,11 +5,11 @@ import { FaBars, FaShoppingBasket, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const router = useRouter();
-  const [logoUrl, setLogoUrl] = useState(
+  const [logoUrl, setLogoUrl] = useState<string>(
     "https://res.cloudinary.com/dapurumika/image/upload/v1661340036/Icons/logo-square_qd5cv3.png"
   );
 
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   const closeMobileMenu = () => setOpenMenu(false);
 
   return (
