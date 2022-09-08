@@ -16,7 +16,7 @@ interface Slide {
 
 function Slider({ data }: SliderProps) {
   const [indexActive, setIndexActive] = useState<number>(0);
-  const [showModal, setShowModal] = useState<boolean>(true);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const onClickLeft = () => {
     if (indexActive === 0) {
