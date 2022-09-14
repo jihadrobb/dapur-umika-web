@@ -4,7 +4,6 @@ import { Element } from "react-scroll";
 
 import { IPricelist } from "interfaces/pricelist";
 import pricelistApis from "@/apis/pricelist";
-import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Slider from "@/components/Slider";
 import SocialMedia from "@/components/SocialMedia";
@@ -27,7 +26,6 @@ function Home({ pricelists }: HomeProps) {
   return (
     <>
       <div className="relative">
-        <Header />
         <Navbar />
         <Element name="motto">
           <div className="h-[92vh] w-screen pb-[8vh] flex flex-col justify-center items-center bg-light-dotted">
